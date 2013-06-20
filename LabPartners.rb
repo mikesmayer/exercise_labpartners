@@ -1,4 +1,4 @@
-puts "Hi, let me help you create groups for your class"
+puts "Hi, let me help you create groups for your class."
 
 puts "How many students should be in each group?"
 
@@ -15,14 +15,12 @@ subgroups = students.sort_by{rand}.each_slice(groupsize).to_a
 
 if students.length % groupsize != 0
   lizard = subgroups[-2].concat(subgroups[-1])
-else print subgroups
+  subgroups.pop(2)
+  subgroups.push(lizard)
 end
-
-subgroups.pop(2)
-subgroups.push(lizard)
 
 # print subgroups
 
 subgroups.each do |x|
-  puts "here's a group of students #{x}"
+  puts "Here's a group of students #{x}"
 end
